@@ -28,12 +28,12 @@ func readFile(filename string) []string {
 func cycleCheck(cycle int, x int) {
 	rowPos := (cycle - 1) % 40
 	if x-1 == rowPos || x == rowPos || x+1 == rowPos {
-		fmt.Printf(".")
+		fmt.Printf("%c", 2)
 	} else {
-		fmt.Printf("#")
+		fmt.Printf(" ")
 	}
 
-	if cycle%40 == 0 {
+	if rowPos == 39 {
 		fmt.Printf("\n")
 	}
 
@@ -49,6 +49,8 @@ func main() {
 	cycle := 1
 	x := 1
 	fmt.Println("")
+
+	cycleCheck(cycle, x)
 	// nnop
 	// addx 3
 	// 1 -
@@ -72,3 +74,12 @@ func main() {
 	fmt.Println("")
 
 }
+
+/**
+☻☻☻  ☻☻☻☻ ☻☻☻   ☻☻  ☻☻☻☻ ☻☻☻☻   ☻☻ ☻☻☻
+☻  ☻    ☻ ☻  ☻ ☻  ☻    ☻ ☻       ☻ ☻  ☻
+☻  ☻   ☻  ☻☻☻  ☻      ☻  ☻☻☻     ☻ ☻☻☻
+☻☻☻   ☻   ☻  ☻ ☻ ☻☻  ☻   ☻       ☻ ☻  ☻
+☻    ☻    ☻  ☻ ☻  ☻ ☻    ☻    ☻  ☻ ☻  ☻
+☻    ☻☻☻☻ ☻☻☻   ☻☻☻ ☻☻☻☻ ☻☻☻☻  ☻☻  ☻☻☻
+*/
